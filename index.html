@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Música y Redes Sociales</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula tu archivo CSS -->
+</head>
+<body>
+    <!-- Pantalla de bienvenida (¡Hola!) -->
+    <div id="greeting-screen" class="greeting-screen">
+        <h1 id="greeting" class="greeting-text">¡Hola! Haz clic aquí para empezar la música</h1>
+    </div>
+
+    <!-- Contenedor principal (inicialmente oculto) -->
+    <div id="content" class="container" style="display: none;">
+        <!-- Caja interactiva -->
+        <div class="interactive-box">
+            <!-- Imagen o GIF de perfil -->
+            <div class="profile">
+                <img src="descarga (1).gif" alt="Mi Foto" class="profile-img">
+            </div>
+            
+            <!-- Botones de redes sociales -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/tuusuario" target="_blank" class="social-button instagram">Instagram</a>
+                <a href="https://www.twitter.com/tuusuario" target="_blank" class="social-button twitter">Twitter</a>
+                <a href="https://www.youtube.com/c/tuusuario" target="_blank" class="social-button youtube">YouTube</a>
+            </div>
+        </div>
+
+        <!-- Reproductor de música en segundo plano -->
+        <audio id="background-music" loop>
+            <source src="Molina_Hey_Kids.mp3" type="audio/mp3">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+    </div>
+
+    <script src="script.js"></script> <!-- Vincula tu archivo de JavaScript -->
+</body>
+</html>
+
+
+
