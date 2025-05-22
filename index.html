@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bitch_Rada</title>
+  <link rel="icon" href="dinero.gif" type="image/gif">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * { cursor: crosshair; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url('rada3.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .bitch-button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #FF6347;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .bitch-button:hover {
+      background: linear-gradient(135deg, #FF6347, #FFD700);
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(255, 99, 71, 0.7);
+      letter-spacing: 2px;
+      color: black;
+    }
+
+    .container {
+      display: none;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .profile-container {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+      border: 2px solid #FFD700;
+      border-radius: 20px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .profile {
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .profile img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .profile img:hover {
+      transform: scale(1.1);
+    }
+
+    #username {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-button {
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      color: white;
+    }
+
+    .social-button.telegram { background-color: #0088cc; }
+    .social-button.instagram { background-color: #E4405F; }
+    .social-button.discord { background-color: #7289da; }
+
+    .social-button:hover {
+      transform: scale(1.05);
+    }
+
+    .interactive-box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .image-gallery {
+      display: none;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .slider {
+      display: inline-block;
+      position: relative;
+      max-width: 300px;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .gallery-controls {
+      margin-top: 10px;
+    }
+
+    .gallery-controls button {
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #FFD700;
+      border: none;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón inicial -->
+  <div id="intro-message">
+    <button id="activate-btn" class="bitch-button">Bitch</button>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="container" id="content">
+    <div class="profile-container">
+      <div class="profile">
+        <img src="radaprincipal.jpg" alt="Imagen de perfil" />
+        <p>Visitas: <span id="visit-count">0</span></p>
+      </div>
+      <div id="username">@recargasrada</div>
+      <div class="social-links">
+        <a href="https://t.me/+36HWg3tPbKVhZWIx" target="_blank" class="social-button telegram">
+          <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+        <a href="https://www.instagram.com/radaconsed__/" target="_blank" class="social-button instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://discord.gg/xdffUmnWDs" target="_blank" class="social-button discord">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galería -->
+  <div class="image-gallery">
+    <div class="slider">
+      <img src="rada3.gif" class="slide active" alt="Imagen 1">
+      <img src="girl icon.jpg" class="slide" alt="Imagen 2">
+      <img src="m.jpg" class="slide" alt="Imagen 3">
+    </div>
+    <div class="gallery-controls">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Música -->
+  <audio id="background-music" loop>
+    <source src="Molina_Hey_Kids.mp3" type="audio/mp3" />
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+
+  <!-- Interactividad -->
+  <div class="interactive-box" id="box"></div>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const activateBtn = document.getElementById("activate-btn");
+      const content = document.getElementById("content");
+      const introMessage = document.getElementById("intro-message");
+      const audio = document.getElementById("background-music");
+      const imageGallery = document.querySelector('.image-gallery');
+
+      activateBtn.addEventListener("click", function () {
+        content.style.display = "block";
+        introMessage.style.display = "none";
+        imageGallery.style.display = "block";
+        audio.play();
+        audio.volume = 0.08;
+      });
+
+      // Contador de visitas
+      let visitCount = localStorage.getItem('visitCount');
+      visitCount = visitCount === null ? 1 : parseInt(visitCount) + 1;
+      document.getElementById('visit-count').textContent = visitCount;
+      localStorage.setItem('visitCount', visitCount);
+
+      // Galería slider
+      const slides = document.querySelectorAll('.slide');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          slide.style.display = i === index ? 'block' : 'none';
+        });
+      }
+
+      document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      showSlide(currentIndex);
+
+      // Movimiento interactivo
+      const box = document.getElementById('box');
+      box.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = box.getBoundingClientRect();
+        const x = e.clientX - left;
+        const y = e.clientY - top;
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const rotateX = ((x - centerX) / centerX) * -10;
+        const rotateY = ((y - centerY) / centerY) * 10;
+        box.style.transform = `rotateX(${rotateY}deg) rotateY(${rotateX}deg)`;
+      });
+      box.addEventListener('mouseleave', () => {
+        box.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+
+      // Protección: bloqueo de clic derecho y teclas comunes de inspección
+      document.addEventListener("contextmenu", e => e.preventDefault());
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode === 123 || 
+            (e.ctrlKey && e.shiftKey && e.keyCode === 73) || 
+            (e.ctrlKey && e.keyCode === 85)) {
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
