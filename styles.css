@@ -1,0 +1,152 @@
+.container { cursor: crosshair;
+}
+
+/* ===== GALERÍA DE IMÁGENES SLIDER ===== */
+
+.image-gallery {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.slide.active {
+  display: block;
+}
+
+.gallery-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.gallery-controls button {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #FFD700;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.gallery-controls button:hover {
+  background: rgba(255, 215, 0, 0.8);
+  color: black;
+}
+
+
+/* Efecto de enfoque (focus) para cuando se hace clic en el botón */
+.bitch-button:focus {
+    outline: none; /* Elimina el contorno predeterminado */
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 99, 71, 0.9); /* Sombra más intensa al hacer clic */
+}
+.container { cursor: crosshair;
+}
+
+/* Asegúrate de que el contenido no se desborde */
+
+
+/* Estilos para el contenedor principal */
+.container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Estilos para la imagen de perfil */
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+/* Estilo para el mensaje de bienvenida */
+#welcome-message {
+    margin-bottom: 30px;
+}
+
+/* Estilos para los botones de redes sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-button i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.social-button:hover {
+    background-color: #555;
+}
+
+/* Colores personalizados para cada red social */
+.discord {
+    background-color: #7289da; /* Color de Discord */
+}
+
+.instagram {
+    background-color: #e4405f; /* Color de Instagram */
+}
+
+.telegram {
+    background-color: #0088cc; /* Color de Telegram */
+}
+
+/* Estilo del mensaje de bienvenida y el botón inicial */
+#intro-message {
+    text-align: center;
+    margin-top: 20%;
+}
+
+#intro-message button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#intro-message button:hover {
+    background-color: #555;
+}
+
+
